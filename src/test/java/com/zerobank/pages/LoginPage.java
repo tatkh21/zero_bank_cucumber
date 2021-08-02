@@ -42,11 +42,7 @@ public class LoginPage{
         passwordInput.sendKeys(password);
         loginButton.click();
     }
-    public void emptyLogin(){
-        loginInput.sendKeys("");
-        passwordInput.sendKeys("");
-        loginButton.click();
-    }
+
 
     @FindBy(xpath = "//button[@id='details-button']")
     private WebElement advanced;
