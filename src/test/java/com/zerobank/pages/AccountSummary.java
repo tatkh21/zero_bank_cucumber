@@ -24,6 +24,9 @@ public class AccountSummary extends AccountSummaryBasePage {
     @FindBy (xpath = "//table/thead/tr/th")
     public List<WebElement> transactionTable;
 
+    @FindBy (xpath = "(//table)[2]/tbody/tr/td/a")
+    public WebElement brokerageLink;
+
     public void assertNames(String name, List<String> expectedNames) {
         switch (name) {
             case "accounts":

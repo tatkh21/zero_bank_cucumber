@@ -6,7 +6,6 @@ Feature:User is on the Account Activity page and can see different accounts
     And user clicks to advanced connection button
     Then user is on the "Account Summary" page
 
-  @wip
   Scenario: Account activity page
     Given user clicks on "Account Activity"
     Then dropdown default value is "Savings"
@@ -22,3 +21,5 @@ Feature:User is on the Account Activity page and can see different accounts
       | Description |
       | Deposit     |
       | Withdrawal  |
+
+

@@ -1,13 +1,13 @@
 package com.zerobank.utilities;
 
-import com.zerobank.pages.AccountSummary;
-import com.zerobank.pages.LoginPage;
-import com.zerobank.pages.OnlineBankingPage;
+import com.zerobank.pages.*;
 
 public class Pages {
     private LoginPage loginPage;
     private OnlineBankingPage onlineBankingPage;
     private AccountSummary accountSummary;
+    private PayBills payBills;
+    private AccountActivity accountActivity;
 
     public LoginPage loginPage() {
         if (loginPage == null) {
@@ -25,5 +25,15 @@ public class Pages {
             accountSummary = new AccountSummary();
         }
         return accountSummary;
+    }
+    public PayBills payBills() {
+        if(payBills == null) {
+            payBills = new PayBills();
+        } return payBills;
+    }
+    public AccountActivity accountActivity() {
+        if(accountActivity == null) {
+            accountActivity = new AccountActivity();
+        } return accountActivity;
     }
 }
