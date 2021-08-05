@@ -36,11 +36,6 @@ public class AccountSummaryAndActivity_StepDefinition {
     }
 
 
-    @Given("user clicks on {string} link")
-    public void userClicksOnLink(String linkName) {
-        pages.accountSummary().brokerageLink.click();
-    }
-
     @And("Account drop down should have {string} selected")
     public void accountDropDownShouldHaveSelected(String expectedValue) {
        select = new Select(pages.accountActivity().aaDropdown);
@@ -49,6 +44,10 @@ public class AccountSummaryAndActivity_StepDefinition {
     }
 
 
+    @Given("user clicks on {string} link user can see {string} page")
+    public void userClicksOnLinkUserCanSeePage(String link, String title) {
+        pages.accountSummary().navigateAccountsLinksAndAssertTitle(link,title);
+    }
 }
 
 

@@ -1,6 +1,8 @@
 package com.zerobank.pages;
 
+import com.zerobank.utilities.Driver;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
@@ -24,8 +26,21 @@ public class AccountSummary extends AccountSummaryBasePage {
     @FindBy (xpath = "//table/thead/tr/th")
     public List<WebElement> transactionTable;
 
-    @FindBy (xpath = "(//table)[2]/tbody/tr/td/a")
+    @FindBy (xpath = "//a[.='Brokerage']")
     public WebElement brokerageLink;
+
+    @FindBy(xpath = "//a[.='Checking']")
+    public WebElement checkingLink;
+
+
+
+    public void navigateAccountsLinksAndAssertTitle(String str, String expectedPage) {
+        WebElement tableLink = Driver.getDriver().findElement(By.xpath("//a[.='" + str +"']"));
+        tableLink.click();
+        String actualTitle = Driver.getDriver().getTitle();
+        actualTitle = actualTitle.substring(7);
+        Assert.assertTrue("Assertion error", expectedPage.equals(actualTitle));
+    }
 
     public void assertNames(String name, List<String> expectedNames) {
         switch (name) {

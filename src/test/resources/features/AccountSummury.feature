@@ -17,8 +17,24 @@ Feature:User is on the Account Summary page and can see different accounts
       | Account    |
       | Credit Card |
       | Balance     |
-  @wip
+
   Scenario: Brokerage account redirect
-    Given user clicks on "Brokerage" link
-    Then user is on the "Account Activity" page
+    Given user clicks on "Brokerage" link user can see "Account Activity" page
     And Account drop down should have "Brokerage" selected
+
+
+    Scenario: Checking account redirect
+      Given user clicks on "Checking" link user can see "Account Activity" page
+      And Account drop down should have "Checking" selected
+@wip
+  Scenario: Credit card account redirect
+    Given user clicks on "Credit Card" link user can see "Account Activity" page
+    And Account drop down should have "Credit Card" selected
+@wip
+  Scenario: Loan account redirect
+    Given user clicks on "Loan" link user can see "Account Activity" page
+    And Account drop down should have "Loan" selected
+
+
+
+
