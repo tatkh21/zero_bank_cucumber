@@ -9,7 +9,5 @@ public class Hooks {
     public void teardown(){
         Driver.close();
     }
-    //added some changes
-    //added more changes
-    //added third change
+
 }
